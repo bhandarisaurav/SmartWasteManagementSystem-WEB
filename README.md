@@ -1,1 +1,1 @@
-# SmartWasteManagementSystem
+# Smart Waste Management System
