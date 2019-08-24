@@ -16,14 +16,13 @@ body{
 }
 
 .popupregister{
-    width: 800px;
-    height: 600px;
+    height: 485px;
     text-align: center;
     background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 5px 5px #D6D6D7;
-    margin-top: 25px;
-    margin-left: 180px;
+    border-radius: 6px;
+    box-shadow: 0 0 1px 1px #D6D6D7;
+    margin-top: 2px;
+    margin-left: 45px;
 }
 
 .heading{
@@ -145,9 +144,46 @@ button{
     text-decoration: none;
 }
 
-
 a:hover{
     text-decoration: none;
+}
+
+select{
+    border-radius: 5px;
+}
+
+#userInfo_paginate{
+    text-align: center;
+}
+
+#userInfo_previous{
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#userInfo_previous:hover{
+    color: #3c7f3c;
+}
+
+#userInfo_next{
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#userInfo_next:hover{
+    color: #3c7f3c;
+}
+
+.paginate_button{
+    cursor: pointer;
+}
+
+.paginate_button:hover{
+    color: #3c7f3c;
+}
+
+#deletelink:hover{
+    color: #3c7f3c;
 }
 
 

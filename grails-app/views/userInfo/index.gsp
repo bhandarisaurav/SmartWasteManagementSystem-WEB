@@ -8,16 +8,16 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
+
+    <asset:stylesheet src="style.css"/>
     <meta name="layout" content="main">
     <title></title>
 </head>
 
 <body>
 
-<!-- Begin Page Content -->
 <div class="container-fluid">
 
-    <!-- Content Row -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
 
@@ -112,8 +112,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Content Row -->
 
 </div>
 </div>
