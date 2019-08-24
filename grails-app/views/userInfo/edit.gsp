@@ -35,9 +35,6 @@
                     </form>
                 </div>
 
-                <div class="col-md-6 image">
-                    <asset:image class="imagelogin" src="image1.jpg"/>
-                </div>
 
                 %{--<a href="Login.html">--}%
                 %{--<p class="infotext">--}%

@@ -1,6 +1,7 @@
 package api.smartwaste.marshaller
 
 import grails.converters.JSON
+import smartwastemanagementsystem.Dustbin
 import smartwastemanagementsystem.UserInfo
 
 class UserInfoMarshaller {
@@ -11,6 +12,15 @@ class UserInfoMarshaller {
                     fullName : result?.fullName,
                     email : result?.email,
                     phoneNumber : result?.phoneNumber
+            ]
+
+        }
+        JSON.registerObjectMarshaller(Dustbin){ Dustbin result->
+            return [
+                    id:result?.id,
+                    location : result?.location,
+                    distance : result?.distance,
+                    capacity : result?.capacity
             ]
 
         }

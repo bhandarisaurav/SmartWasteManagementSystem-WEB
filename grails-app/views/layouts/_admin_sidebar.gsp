@@ -6,6 +6,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-dumpster"></i>
         </div>
+
         <div class="sidebar-brand-text mx-3">Smart Waste</div>
     </a>
 
@@ -29,11 +30,15 @@
 
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-        <a class="nav-link" href="${createLink(controller: "userInfo",action: "index")}">
+        <a class="nav-link" href="${createLink(controller: "userInfo", action: "index")}">
             <i class="fas fa-fw fa-user"></i>
             <span>Users</span></a>
     </li>
-
+    <li class="nav-item">
+        <a class="nav-link" href="${createLink(controller: "dustbin", action: "index")}">
+            <i class="fas fa-fw fa-trash"></i>
+            <span>Dustbin</span></a>
+    </li>
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

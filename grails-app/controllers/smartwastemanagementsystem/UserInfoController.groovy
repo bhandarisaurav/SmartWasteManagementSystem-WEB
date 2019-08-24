@@ -14,8 +14,9 @@ class UserInfoController {
     @Secured("ROLE_ADMIN")
     def create() {
         def userInfo = new UserInfo()
-        [userInfo:userInfo]
+        [userInfo: userInfo]
     }
+
     @Secured("ROLE_ADMIN")
     def dataTable() {
         def userData = userInfoService.userInfoList(params)
@@ -39,6 +40,14 @@ class UserInfoController {
     }
 
     @Secured(['ROLE_ADMIN'])
+    def show() {
+        def user = User.findById(6)
+        println "user = $user"
+        def userLocation = Location.findAllByUser(user)
+        [userLocation: userLocation]
+    }
+
+    @Secured(['ROLE_ADMIN'])
     def edit() {
         UserInfo userInfo = userInfoService.getUserInfo(params.userInfoID)
         println "userInfo = $userInfo"
@@ -47,21 +56,21 @@ class UserInfoController {
 
     @Secured("ROLE_ADMIN")
     def delete() {
-        UserInfo userInfo=userInfoService.getUserInfo(params.userInfoID)
+        UserInfo userInfo = userInfoService.getUserInfo(params.userInfoID)
         println "userInfo = $userInfo"
-        try{
-            userInfo.delete(flush:true)
-                User user = User.findByUsername(userInfo?.email)
-                println "user = $user"
-                user.accountExpired = true
-                user.save(flush:true, failOnError:true)
+        try {
+            userInfo.delete(flush: true)
+            User user = User.findByUsername(userInfo?.email)
+            println "user = $user"
+            user.accountExpired = true
+            user.save(flush: true, failOnError: true)
 
-            flash.error="User Plan :${userInfo?.fullName} deleted"
-        }catch(Exception e){
-            flash.error="Discount Plan :${userInfo?.fullName}"
+            flash.error = "User Plan :${userInfo?.fullName} deleted"
+        } catch (Exception e) {
+            flash.error = "Discount Plan :${userInfo?.fullName}"
         }
 
-        redirect(controller:'userInfo', action:'index')
+        redirect(controller: 'userInfo', action: 'index')
     }
 
 

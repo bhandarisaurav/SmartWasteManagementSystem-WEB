@@ -21,7 +21,7 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
 
-            <a class="btn btn-primary btn-icon-split mt-2" href="#">
+            <a class="btn btn-primary btn-icon-split mt-2" href="${createLink(controller: 'userInfo',action: 'create')}">
                 <span class="icon text-white-20">
                     <i class="fas fa-user"></i>
                 </span>
@@ -171,6 +171,10 @@
                             "<form class='col-md-4 edit-form' method=\"DELETE\" action=\"${createLink( controller : "userInfo", action : "delete")}\">" +
                             "<input type=\"hidden\" name=\"userInfoID\" value="+data+" />" +
                             "<a href=\"#\" id=\"deletelink\" onclick=\"this.parentNode.submit()\"><i class=\"fas fa-trash-alt ml-2\" aria-hidden=\"true\"></i></a>"+
+                            "</form>"+
+                            "<form class='col-md-4 edit-form' method=\"POST\" action=\"${createLink( controller : "userInfo", action : "show")}\">" +
+                            "<input type=\"hidden\" name=\"userInfoID\" value="+data+" />" +
+                            "<a href=\"#\" id=\"deletelink\" onclick=\"this.parentNode.submit()\"><i class=\"fas fa-eye ml-2\" aria-hidden=\"true\"></i></a>"+
                             "</form>"+
                             "</div>"
 
