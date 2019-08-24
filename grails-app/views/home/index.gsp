@@ -9,6 +9,7 @@
     %{--<asset:link rel="icon"  href="img/favicon.png" type="image/png"/>--}%
 
 </head>
+
 <body>
 <div class="container">
     <div class="row">
@@ -24,8 +25,12 @@
                 </div>
 
                 <div class="col-md-6 form">
-                    <form class="loginform" action="${request.contextPath}/login/authenticate" method="post">
-
+                    ${flash.message}
+                    <g:if test="${flash.message}">
+                        ${flash.message}
+                    </g:if>
+                    <form id="register-form" action="${postUrl ?: '/login/authenticate'}" method="POST"
+                          role="form" class="loginform" enctype="multipart/form-data">
                         <div class="userbox">
                             <p class="usertext">
                                 Username
@@ -37,20 +42,13 @@
                             <p class="passwordtext">
                                 Password
                             </p>
-                            <input type="text" name="password" placeholder="Enter password">
+                            <input type="password" name="password" placeholder="Enter password">
                         </div>
 
                         <button type="submit">Log in</button>
 
-                        %{--<a href="register.html">--}%
-                            %{--<p class="logintext">--}%
-                                %{--Not a member? Sign Up--}%
-                            %{--</p>--}%
-                        %{--</a>--}%
-
                     </form>
                 </div>
-
 
             </div>
         </div>
