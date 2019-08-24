@@ -8,20 +8,24 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title></title>
+
+    <asset:stylesheet src="style.css"/>
+    <meta name="layout" content="main">
+    <title>Register</title>
 </head>
 
 <body>
-<div class="container">
+
+<div class="container-fluid">
     <div class="row">
-        <div class="col-md-6 popupregister">
+        <div class="col-md-11 popupregister">
             <h2 class="heading">
-                Smart Waste Management System  |  Register
+                Edit User
             </h2>
 
             <div class="col-md-12 elements">
-
                 <div class="col-md-6 form">
+
                     <form class="form form-horizontal registerform" id="userInfoForm" action="${createLink(controller: 'userInfo',action: 'saveOrUpdate')}"  method="POST">
                         <input type="hidden" name="userInfoID" value="${userInfo?.id}"/>
 
