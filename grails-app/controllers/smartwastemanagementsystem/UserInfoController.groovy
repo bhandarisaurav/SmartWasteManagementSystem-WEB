@@ -18,7 +18,7 @@ class UserInfoController {
     }
     @Secured("ROLE_ADMIN")
     def dataTable() {
-        def userData = productService.productList(params)
+        def userData = userInfoService.userInfoList(params)
         println "userData = $userData"
         def dataMap = [:]
         dataMap.status = 200
@@ -40,13 +40,28 @@ class UserInfoController {
 
     @Secured(['ROLE_ADMIN'])
     def edit() {
-        UserInfo userInfo = userInfoService.getUserInfo("1")
+        UserInfo userInfo = userInfoService.getUserInfo(params.userInfoID)
         println "userInfo = $userInfo"
         [userInfo: userInfo]
     }
 
     @Secured("ROLE_ADMIN")
     def delete() {
+        UserInfo userInfo=userInfoService.getUserInfo(params.userInfoID)
+        println "userInfo = $userInfo"
+        try{
+            userInfo.delete(flush:true)
+                User user = User.findByUsername(userInfo?.email)
+                println "user = $user"
+                user.accountExpired = true
+                user.save(flush:true, failOnError:true)
+
+            flash.error="User Plan :${userInfo?.fullName} deleted"
+        }catch(Exception e){
+            flash.error="Discount Plan :${userInfo?.fullName}"
+        }
+
+        redirect(controller:'userInfo', action:'index')
     }
 
 

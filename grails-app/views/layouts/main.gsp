@@ -18,10 +18,12 @@
 <asset:stylesheet src="style.min.css"/>
 <asset:javascript src="jquery.min.js"/>
 <asset:javascript src="bootstrap.bundle.min.js"/>
+<asset:javascript src="dataTables.bootstrap.min.js"/>
+<asset:javascript src="jquery.dataTables.min.js"/>
 <g:layoutHead/>
 </head>
 
-<ende id="page-top">
+<body id="page-top">
 <div id="wrapper">
     <!-- Preloader End -->
 

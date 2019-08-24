@@ -7,10 +7,10 @@ class UserInfoMarshaller {
     static void  register(){
         JSON.registerObjectMarshaller(UserInfo){UserInfo result->
             return [
-                    id:result?.id,
+                    userInfoID:result?.id,
                     fullName : result?.fullName,
                     email : result?.email,
-                    phoneNumber : result.phoneNumber
+                    phoneNumber : result?.phoneNumber
             ]
 
         }
