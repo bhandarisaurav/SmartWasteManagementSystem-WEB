@@ -107,7 +107,7 @@ input:focus{
 .registerform{
     padding:  10px 30px; 
     background:  #fefefe; 
-    display:  flex; 
+    display:  flex;
     flex-direction:  column;
     align-items:  flex-start; 
     padding-bottom:  10px; 
@@ -220,4 +220,38 @@ select{
 
 .form-control{
     float: right;
+}
+
+.mapleft{
+    height: 485px;
+    text-align: center;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 0 1px 1px #D6D6D7;
+    margin-top: 2px;
+    margin-left: 15px;
+}
+
+.mapright{
+    float: right;
+    max-width: 1125px;
+    text-align: center;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 0 1px 1px #D6D6D7;
+    margin-top: 2px;
+    margin-left: 25px;
+    margin-bottom: 20px;
+    padding-bottom: 25px;
+}
+
+#map{
+    width: 1070px !important;
+    height: 680px !important;
+}
+
+.headingdustbin{
+    font-family: lato;
+    font-weight: bold;
+    margin-top: 20px;
 }
