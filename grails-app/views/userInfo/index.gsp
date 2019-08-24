@@ -28,7 +28,7 @@
                 <span class="text">Add User</span>
             </a>
 
-            <h6 class="m-0 font-weight-bold text-primary mt-3">Users List</h6>
+            <h6 class="m-0 font-weight-bold text-primary mt-3">Dustbin List</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">

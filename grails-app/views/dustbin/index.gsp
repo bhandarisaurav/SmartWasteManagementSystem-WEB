@@ -27,7 +27,7 @@
                 <span class="text">Add Dustbin</span>
             </a>
 
-            <h6 class="m-0 font-weight-bold text-primary mt-3">Users List</h6>
+            <h6 class="m-0 font-weight-bold text-primary mt-3">Dustbin List</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -36,8 +36,8 @@
                     <tr>
                         <th>S.N</th>
                         <th>Location</th>
-                        <th>Distance</th>
-                        <th>Capacity</th>
+                        <th>Latitude</th>
+                        <th>Longitude</th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -86,9 +86,9 @@
 
             "columns": [
                 { "data": "id" },
-                { "data": "location" },
-                { "data": "distance" },
-                { "data": "capacity" },
+                { "data": "address" },
+                { "data": "latitude" },
+                { "data": "longitude" }
             ],
             "columnDefs": [
                 {

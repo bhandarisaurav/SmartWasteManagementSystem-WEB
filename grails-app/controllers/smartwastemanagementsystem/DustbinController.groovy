@@ -16,7 +16,8 @@ class DustbinController {
     def create() {
         [dustbinInstance: new Dustbin()]
     }
-    def dataTable(){
+
+    def dataTable() {
         def userData = Dustbin.createCriteria().list {}
         println "userData = $userData"
         def dataMap = [:]
@@ -24,12 +25,12 @@ class DustbinController {
         dataMap.data = userData
         render dataMap as JSON
     }
-    def save()
-    {
+
+    def save() {
         Dustbin dustbin = new Dustbin()
-        dustbin.location = params.location
-        dustbin.distance = params.distance
-        dustbin.capacity = params.capacity
+        dustbin.address = params.address
+        dustbin.latitude = params.latitude as double
+        dustbin.longitude = params.longitude as double
         dustbin.save(flush: true, failOnError: true)
         redirect(action: 'index')
     }
@@ -50,9 +51,9 @@ class DustbinController {
         def id = params.id
         println "id = $id"
         def dustbinToUpdate = Dustbin.findById(id)
-        dustbinToUpdate.location = params.location
-        dustbinToUpdate.distance = params.distance
-        dustbinToUpdate.capacity = params.capacity
+        dustbinToUpdate.address = params.address
+        dustbinToUpdate.latitude = params.latitude as double
+        dustbinToUpdate.longitude = params.longitude as double
         dustbinToUpdate.save(flush: true)
         redirect(action: "index")
     }

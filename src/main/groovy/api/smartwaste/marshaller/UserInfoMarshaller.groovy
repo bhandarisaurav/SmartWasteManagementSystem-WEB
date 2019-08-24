@@ -18,9 +18,9 @@ class UserInfoMarshaller {
         JSON.registerObjectMarshaller(Dustbin){ Dustbin result->
             return [
                     id:result?.id,
-                    location : result?.location,
-                    distance : result?.distance,
-                    capacity : result?.capacity
+                    address : result?.address,
+                    latitude : result?.latitude,
+                    longitude : result?.longitude
             ]
 
         }

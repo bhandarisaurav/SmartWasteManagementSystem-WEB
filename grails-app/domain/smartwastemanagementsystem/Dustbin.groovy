@@ -1,13 +1,13 @@
 package smartwastemanagementsystem
 
 class Dustbin {
-    String location
-    String distance
-    String capacity
+    double latitude
+    double longitude
+    String address
 
     static constraints = {
-        location(blank:true, nullable: false)
-        distance(blank:true, nullable: false)
-        capacity(blank:true, nullable: false)
+        latitude(blank: true, nullable: false)
+        longitude(blank: true, nullable: false)
+        address(blank: true, nullable: false)
     }
 }

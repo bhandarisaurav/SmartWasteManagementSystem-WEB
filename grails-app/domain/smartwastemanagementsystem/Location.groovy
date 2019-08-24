@@ -1,8 +1,8 @@
 package smartwastemanagementsystem
 
 class Location {
-    String latitude
-    String longitude
+    double latitude
+    double longitude
     String address
     User user
     Date date = new Date()

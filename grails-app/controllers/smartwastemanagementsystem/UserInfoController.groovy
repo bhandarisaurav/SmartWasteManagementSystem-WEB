@@ -41,7 +41,7 @@ class UserInfoController {
 
     @Secured(['ROLE_ADMIN'])
     def show() {
-        def user = User.findById(6)
+        def user = User.findById(1)
         println "user = $user"
         def userLocation = Location.findAllByUser(user)
         [userLocation: userLocation]
