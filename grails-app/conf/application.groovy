@@ -2,7 +2,7 @@ grails.resources.pattern = '/**'
 
 /*Additional Spring sec configs*/
 grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/dashboard/check'
-grails.plugin.springsecurity.failureHandler.defaultFailureUrl = '/dfghjklp'
+grails.plugin.springsecurity.failureHandler.defaultFailureUrl = '/'
 grails.plugin.springsecurity.auth.loginFormUrl = '/'
 grails.plugin.springsecurity.logout.postOnly = false
 grails.plugin.springsecurity.apf.storeLastUsername = true

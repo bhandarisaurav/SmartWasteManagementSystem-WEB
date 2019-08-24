@@ -1,5 +1,6 @@
 package smartwastemanagementsystem
 
+
 import grails.plugin.springsecurity.annotation.Secured
 
 @Secured('ROLE_ADMIN')
@@ -10,8 +11,8 @@ class AdminController {
 
         def busCount = UserInfo.list().size()
         def dustbinCount = Dustbin.list().size()
-        [busCount: busCount, dustbinCount: dustbinCount]
-
+        def dustBins = Dustbin.list()
+        [busCount: busCount, dustbinCount: dustbinCount, dustBins: dustBins]
 
     }
 

@@ -10,4 +10,8 @@ class Dustbin {
         longitude(blank: true, nullable: false)
         address(blank: true, nullable: false)
     }
+
+    List toLists() {
+        return [address, latitude, longitude]
+    }
 }
