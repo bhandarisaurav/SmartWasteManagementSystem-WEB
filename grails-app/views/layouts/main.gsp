@@ -2,9 +2,6 @@
 <html lang="en" class="no-js">
 <head>
     <!-- Twitter meta-->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:site" content="@pratikborsadiya">
-    <meta property="twitter:creator" content="@pratikborsadiya">
     <title>Smart Waste Dashboard</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +11,7 @@
             href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
             rel="stylesheet"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <asset:link rel="shortcut icon" href="icon.png" type="image/x-icon" />
     <!-- Main CSS-->
     <asset:stylesheet src="style.min.css"/>
     <asset:javascript src="jquery.min.js"/>
