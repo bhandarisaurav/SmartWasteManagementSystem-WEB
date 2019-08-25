@@ -12,6 +12,7 @@ class AdminController {
         def dustBinsList = []
         def busCount = UserInfo.list().size()
         def dustbinCount = Dustbin.list().size()
+        def notificationCount = Notification.findAllByChecked(false).size()
         def dustBins = Dustbin.list()
         dustBins.each {
             def lis = []
@@ -23,7 +24,7 @@ class AdminController {
 
         }
         println dustBinsList as JSON
-        [busCount: busCount, dustbinCount: dustbinCount, dustBinsList: dustBinsList]
+        [busCount: busCount, dustbinCount: dustbinCount, dustBinsList: dustBinsList,notificationCount:notificationCount]
 
     }
 

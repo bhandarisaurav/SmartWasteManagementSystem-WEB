@@ -4,6 +4,7 @@ class Dustbin {
     double latitude
     double longitude
     String address
+    boolean messageSent=false
     float status = 0.0
     static constraints = {
         latitude(blank: true, nullable: false)

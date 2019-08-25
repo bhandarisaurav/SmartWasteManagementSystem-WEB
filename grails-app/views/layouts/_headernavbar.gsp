@@ -1,3 +1,4 @@
+<%@ page import="smartwastemanagementsystem.Notification" %>
 <!-- Content Wrapper -->
 <div class="d-flex flex-column" id="content-wrapper">
 
@@ -38,14 +39,16 @@
                         </form>
                     </div>
                 </li>
-
+    <%def notification = Notification.list()
+       def count = notification.size()
+    %>
                 <!-- Nav Item - Alerts -->
                 <li class="nav-item dropdown no-arrow mx-1">
                     <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown"
                        href="#" id="alertsDropdown" role="button">
                         <i class="fas fa-bell fa-fw"></i>
                         <!-- Counter - Alerts -->
-                        <span class="badge badge-danger badge-counter">3+</span>
+                        <span class="badge badge-danger badge-counter">${count}</span>
                     </a>
                     <!-- Dropdown - Alerts -->
                     <div aria-labelledby="alertsDropdown"
@@ -53,29 +56,43 @@
                         <h6 class="dropdown-header">
                             Notification Center
                         </h6>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
-                            <div class="mr-3">
-                                <div class="icon-circle bg-warning">
-                                    <i class="fas fa-comment-alt text-white"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="small text-gray-500">August 24, 2019</div>
-                                <span class="font-weight-bold">Container at Dhapasi is 86% full.</span>
-                            </div>
-                        </a>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
-                            <div class="mr-3">
-                                <div class="icon-circle bg-warning">
-                                    <i class="fas fa-comment-alt text-white"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="small text-gray-500">August 25, 2019</div>
-                                Container at Gongabu is 92% full.
-                            </div>
-                        </a>
-                        <a class="dropdown-item text-center small text-gray-500" href="#">Show All Notifications</a>
+
+            <g:each in="${notification}" var="notify">
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                        <div class="icon-circle bg-warning">
+                            <i class="fas fa-comment-alt text-white"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="small text-gray-500">${notify.date.format("MM-DD-YY")}</div>
+                        <span class="font-weight-bold">${notify.message}</span>
+                    </div>
+                </a>
+        </g:each>
+                        %{--<a class="dropdown-item d-flex align-items-center" href="#">--}%
+                            %{--<div class="mr-3">--}%
+                                %{--<div class="icon-circle bg-warning">--}%
+                                    %{--<i class="fas fa-comment-alt text-white"></i>--}%
+                                %{--</div>--}%
+                            %{--</div>--}%
+                            %{--<div>--}%
+                                %{--<div class="small text-gray-500">August 24, 2019</div>--}%
+                                %{--<span class="font-weight-bold">Container at Dhapasi is 86% full.</span>--}%
+                            %{--</div>--}%
+                        %{--</a>--}%
+                        %{--<a class="dropdown-item d-flex align-items-center" href="#">--}%
+                            %{--<div class="mr-3">--}%
+                                %{--<div class="icon-circle bg-warning">--}%
+                                    %{--<i class="fas fa-comment-alt text-white"></i>--}%
+                                %{--</div>--}%
+                            %{--</div>--}%
+                            %{--<div>--}%
+                                %{--<div class="small text-gray-500">August 25, 2019</div>--}%
+                                %{--Container at Gongabu is 92% full.--}%
+                            %{--</div>--}%
+                        %{--</a>--}%
+                        <a class="dropdown-item text-center small text-gray-500" href="${createLink(controller: 'notification',action: 'index')}">Show All Notifications</a>
                     </div>
                 </li>
 
