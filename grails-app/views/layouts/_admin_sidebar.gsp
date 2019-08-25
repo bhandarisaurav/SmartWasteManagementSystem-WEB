@@ -1,4 +1,5 @@
 <!-- Sidebar -->
+<asset:stylesheet src="style.css"/>
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
@@ -6,7 +7,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-dumpster"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Smart Waste</div>
+        <div class="sidebar-brand-text mx-3" style="font-size: 15px;">Smart Waste</div>
     </a>
 
     <hr class="sidebar-divider my-0">

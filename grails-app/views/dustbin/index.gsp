@@ -38,6 +38,7 @@
                         <th>Location</th>
                         <th>Latitude</th>
                         <th>Longitude</th>
+                        <th>Status (In %)</th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -88,14 +89,15 @@
                 { "data": "id" },
                 { "data": "address" },
                 { "data": "latitude" },
-                { "data": "longitude" }
+                { "data": "longitude" },
+                { "data": "status" }
             ],
             "columnDefs": [
                 {
                     "targets": [ 0 ],
                     "visible": false
                 },
-                { width: '10%',"targets":4, "data":"id", "render": function ( data,type,full,meta ){
+                { width: '10%',"targets":5, "data":"id", "render": function ( data,type,full,meta ){
                         return "<div class='row container'>"+
                             "<form class='col-md-4 edit-form' method=\"POST\" action=\"${createLink( controller : "dustbin", action : "edit")}\">" +
                             "<input type=\"hidden\" name=\"id\" value="+data+" />" +

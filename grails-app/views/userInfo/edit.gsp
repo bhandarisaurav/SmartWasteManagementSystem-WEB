@@ -18,7 +18,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-11 popupregister">
+        <div class="col-md-4 popupregister">
             <h2 class="heading">
                 Edit User
             </h2>

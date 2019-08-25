@@ -85,7 +85,7 @@
                 <li class="nav-item dropdown no-arrow">
                     <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown"
                        href="#" id="userDropdown" role="button">
-                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">Saras Karanjit</span><!--
+                        <span class="mr-2 d-none d-lg-inline text-gray-600 small"><sec:loggedInUserInfo field="username"/></span><!--
                 <img class="img-profile rounded-circle" src="../img/download.png">-->
                     </a>
                     <!-- Dropdown - User Information -->

@@ -73,5 +73,11 @@ class UserInfoController {
         redirect(controller: 'userInfo', action: 'index')
     }
 
+    @Secured("ROLE_ADMIN")
+    def trackLocation() {
+
+
+    }
+
 
 }

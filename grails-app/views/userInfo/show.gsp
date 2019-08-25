@@ -20,7 +20,7 @@
         <div class="card-header py-3">
 
             <a class="btn btn-primary btn-icon-split mt-2"
-               href="${createLink(controller: 'userInfo', action: 'create')}">
+               href="${createLink(controller: 'userInfo', action: 'trackLocation')}">
                 <span class="icon text-white-20">
                     <i class="fas fa-user"></i>
                 </span>

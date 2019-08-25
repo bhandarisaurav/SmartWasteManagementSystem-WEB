@@ -17,17 +17,17 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-11 popupregister">
+        <div class="col-md-4 popupregister">
             <h2 class="heading">
                 Smart Waste Management System  |  Register
             </h2>
 
             <div class="col-md-12 elements">
-                <div class="col-md-6 form">
+                <div class="col-md-3 form">
                     <form class="form form-horizontal registerform" id="userInfoForm"
                           action="${createLink(controller: 'userInfo', action: 'saveOrUpdate')}" method="POST">
                         <g:render template="form" model="[userInfo: userInfo]"/>
-                        <button type="submit">Create User</button>
+                        <button type="submit" style="margin-left: 75px;">Create User</button>
                     </form>
                 </div>
             </div>
