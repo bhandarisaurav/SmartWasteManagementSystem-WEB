@@ -43,72 +43,6 @@
                     </tr>
                     </thead>
                 </table>
-                %{--<table cellspacing="0" class="table table-bordered" id="dataTable" width="100%">--}%
-                    %{--<thead>--}%
-                    %{--<tr>--}%
-                        %{--<th>Username</th>--}%
-                        %{--<th>E-Mail</th>--}%
-                        %{--<th>Phone Number</th>--}%
-                        %{--<th>Action</th>--}%
-                    %{--</tr>--}%
-                    %{--</thead>--}%
-                    %{--<tbody>--}%
-                    %{--<tr>--}%
-                        %{--<td>Saras Karanjit</td>--}%
-                        %{--<td>saras.karanjit@deerwalk.edu.np</td>--}%
-                        %{--<td>9843214080</td>--}%
-                        %{--<td>--}%
-                            %{--<a href="#">--}%
-                                %{--<span class="fas fa-pencil-alt ml-2"></span>--}%
-                            %{--</a>--}%
-                            %{--<a href="#">--}%
-                                %{--<span class="fas fa-trash ml-2"></span>--}%
-                            %{--</a>--}%
-                        %{--</td>--}%
-                    %{--</tr>--}%
-                    %{--<tr>--}%
-                        %{--<td>Saurav Bhandari</td>--}%
-                        %{--<td>saurav.bhandari@deerwalk.edu.np</td>--}%
-                        %{--<td>9843219090</td>--}%
-                        %{--<td>--}%
-                            %{--<a href="#">--}%
-                                %{--<span class="fas fa-pencil-alt ml-2"></span>--}%
-                            %{--</a>--}%
-                            %{--<a href="#">--}%
-                                %{--<span class="fas fa-trash ml-2"></span>--}%
-                            %{--</a>--}%
-                        %{--</td>--}%
-                    %{--</tr>--}%
-                    %{--<tr>--}%
-                        %{--<td>Raman Pandey</td>--}%
-                        %{--<td>raman.pandey@deerwalk.edu.np</td>--}%
-                        %{--<td>9843212830</td>--}%
-                        %{--<td>--}%
-                            %{--<a href="#">--}%
-                                %{--<span class="fas fa-pencil-alt ml-2"></span>--}%
-                            %{--</a>--}%
-                            %{--<a href="#">--}%
-                                %{--<span class="fas fa-trash ml-2"></span>--}%
-                            %{--</a>--}%
-                        %{--</td>--}%
-                    %{--</tr>--}%
-                    %{--<tr>--}%
-                        %{--<td>Kusal Bista</td>--}%
-                        %{--<td>kushal.bista@deerwalk.edu.np</td>--}%
-                        %{--<td>9843212482</td>--}%
-                        %{--<td>--}%
-                            %{--<a href="#">--}%
-                                %{--<span class="fas fa-pencil-alt ml-2"></span>--}%
-                            %{--</a>--}%
-                            %{--<a href="#">--}%
-                                %{--<span class="fas fa-trash ml-2"></span>--}%
-                            %{--</a>--}%
-                        %{--</td>--}%
-                    %{--</tr>--}%
-
-
-                    %{--</tbody>--}%
-                %{--</table>--}%
             </div>
         </div>
     </div>
@@ -122,7 +56,6 @@
                 [-1, 10, 25, 50, 100],
                 ["All", 10, 25, 50, 100]
             ],
-//            "sDom": "<'toolbar'>lt<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
             "language": {
                 "emptyTable":"No records found.",
                 "oPaginate": {
@@ -135,21 +68,9 @@
                 "url": "${createLink(controller: 'userInfo',action: 'dataTable')}",
                 "type": "GET",
                 "data": function ( d ){
-//                    var dateSelected=$("#dateCreatedFrom").val();
-//                    d.dateSelected= dateSelected;
-//                    d.search=$("#search").val();
+//
                 }
             },
-
-            %{--customerID: results.id.toString(),--}%
-            %{--username: results?.user?.username,--}%
-            %{--fullName: results?.user?.fullName,--}%
-            %{--firstName: results?.firstName,--}%
-            %{--lastName: results?.lastName,--}%
-            %{--email: results?.email,--}%
-            %{--enabled: results?.isActive?'Yes':'No',--}%
-            %{--contactNumber: "${results?.mobileNumber?(results?.mobileNumber+' ,'):''} ${results?.phoneNumber?:''}",--}%
-            %{--locations:results?.locations--}%
 
             "columns": [
                 { "data": "userInfoID" },
@@ -160,7 +81,8 @@
             "columnDefs": [
                 {
                     "targets": [ 0 ],
-                    "visible": true
+                    "visible": false
+
                 },
                 { width: '10%',"targets":4, "data":"userInfoID", "render": function ( data,type,full,meta ){
                         return "<div class='row container'>"+

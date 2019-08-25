@@ -35,14 +35,7 @@
                     </form>
                 </div>
 
-
-                %{--<a href="Login.html">--}%
-                %{--<p class="infotext">--}%
-                %{--Continue to Log In--}%
-                %{--</p>--}%
-                %{--</a>--}%
-
-            </ div>
+            </div>
         </div>
     </div>
 </div>

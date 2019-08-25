@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
-    <!-- Twitter meta-->
     <title>Smart Waste Dashboard</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,7 +23,6 @@
 
 <body id="page-top">
 <div id="wrapper">
-    <!-- Preloader End -->
 
     <g:render template="/layouts/admin_sidebar"/>
     <g:render template="/layouts/headernavbar"/>
@@ -32,14 +30,10 @@
 
     <g:render template="/layouts/footer"/>
 
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
     <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="logoutModal" role="dialog"
          tabindex="-1">
         <div class="modal-dialog" role="document">

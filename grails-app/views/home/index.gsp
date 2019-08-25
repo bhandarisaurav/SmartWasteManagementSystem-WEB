@@ -6,7 +6,6 @@
     <asset:stylesheet src="bootstrap.min.css"/>
     <asset:stylesheet src="style.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    %{--<asset:link rel="icon"  href="img/favicon.png" type="image/png"/>--}%
 
 </head>
 
