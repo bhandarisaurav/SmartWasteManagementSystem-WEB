@@ -40,7 +40,7 @@
                     </div>
                 </li>
     <%def notification = Notification.list()
-       def count = notification.size()
+       def count = Notification.findAllByChecked(false).size()
     %>
                 <!-- Nav Item - Alerts -->
                 <li class="nav-item dropdown no-arrow mx-1">
@@ -58,19 +58,26 @@
                         </h6>
 
             <g:each in="${notification}" var="notify">
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                    <div class="mr-3">
-                        <div class="icon-circle bg-warning">
-                            <i class="fas fa-comment-alt text-white"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="small text-gray-500">${notify.date.format("MM-DD-YY")}</div>
-                        <span class="font-weight-bold">${notify.message}</span>
-                    </div>
-                </a>
+             <g:if test="${!notify.checked}">
+                 <a class="dropdown-item d-flex align-items-center" href="#">
+                     <div class="mr-3">
+                         <div class="icon-circle bg-warning">
+                             <i class="fas fa-comment-alt text-white"></i>
+                         </div>
+                     </div>
+                     <div>
+                         <div class="small text-gray-500">${notify.date.format("MM-DD-YY")}</div>
+                         <span class="font-weight-bold">${notify.message}</span>
+                     </div>
+                 </a>
+                 <a class="dropdown-item text-center small text-gray-500" href="${createLink(controller: 'notification',action: 'index')}">Show All Notifications</a>
+
+             </g:if>
+
+
         </g:each>
-                        %{--<a class="dropdown-item d-flex align-items-center" href="#">--}%
+
+        %{--<a class="dropdown-item d-flex align-items-center" href="#">--}%
                             %{--<div class="mr-3">--}%
                                 %{--<div class="icon-circle bg-warning">--}%
                                     %{--<i class="fas fa-comment-alt text-white"></i>--}%
@@ -92,7 +99,6 @@
                                 %{--Container at Gongabu is 92% full.--}%
                             %{--</div>--}%
                         %{--</a>--}%
-                        <a class="dropdown-item text-center small text-gray-500" href="${createLink(controller: 'notification',action: 'index')}">Show All Notifications</a>
                     </div>
                 </li>
 

@@ -11,12 +11,13 @@
     <title></title>
     <meta name="layout" content="main"/>
     <style>
-        .unread{
-            background: #a7c7ff;
-        }
-        .read{
-            background: springgreen;
-        }
+    .unread {
+        background: #a7c7ff;
+    }
+
+    .read {
+        background: springgreen;
+    }
     </style>
 </head>
 
@@ -28,11 +29,11 @@
         <div class="card-header py-3">
 
             %{--<a class="btn btn-primary btn-icon-split mt-2"--}%
-               %{--href="${createLink(controller: 'userInfo', action: 'trackLocation')}">--}%
-                %{--<span class="icon text-white-20">--}%
-                    %{--<i class="fas fa-user"></i>--}%
-                %{--</span>--}%
-                %{--<span class="text">Track User Current Location</span>--}%
+            %{--href="${createLink(controller: 'userInfo', action: 'trackLocation')}">--}%
+            %{--<span class="icon text-white-20">--}%
+            %{--<i class="fas fa-user"></i>--}%
+            %{--</span>--}%
+            %{--<span class="text">Track User Current Location</span>--}%
             %{--</a>--}%
 
             <h6 class="m-0 font-weight-bold text-primary mt-3">Notifications</h6>
@@ -53,16 +54,21 @@
                     <tbody>
                     <g:each in="${notification}" var="u" status="i">
 
-                        <tr class="${u.checked == false ? 'unread':'read'}">
+                        <tr class="${u.checked == false ? 'unread' : 'read'}">
                             <td>${i + 1}</td>
-                            <td><a href="${createLink(controller: 'notification',action: 'read', params:[id:u?.id])}">${u?.message}</a></td>
+                            <td><a href="${createLink(controller: 'notification', action: 'read', params: [id: u?.id])}">${u?.message}</a>
+                            </td>
                             <td>${u?.checked}</td>
                             <td>${u?.date}</td>
-                          <g:if test="${!u.checked}">
-                              <td><button>Mark as Read</button></td>
+                            <g:if test="${!u.checked}">
+                                <td><a class="btn btn-info"
+                                       href="${createLink(controller: "notification", action: 'read', params: [id: u?.id])}">Mark as Read</a>
+                                </td>
                             </g:if>
-                            <td><button class="btn btn-large btn-info">Already Read</button></td>
+                            <g:else>
+                                <td><button class="btn btn-large btn-info">Already Read</button></td>
 
+                            </g:else>
 
                         </tr>
                     </g:each>
