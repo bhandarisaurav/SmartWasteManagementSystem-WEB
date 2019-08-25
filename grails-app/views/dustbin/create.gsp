@@ -19,6 +19,7 @@
         margin-top: 1em;
         height: 650px;
         width: 1200px;
+        margin-right:15px;
     }
 
     /* Optional: Makes the sample page fill the window. */
@@ -72,7 +73,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-4 mapleft">
+        <div class="col-md-3 mapleft">
             <h2 class="heading">
                 Dustbin Entry
             </h2>
@@ -82,7 +83,7 @@
                     <form class="form form-horizontal registerform" id="userInfoForm"
                           action="${createLink(controller: 'dustbin', action: 'save')}" method="POST">
                         <g:render template="form" model="[dustbinInstance: dustbinInstance]"/>
-                        <button type="submit">Save</button>
+                        <button type="submit" style="margin-left: 48px;">Save</button>
                     </form>
                 </div>
 

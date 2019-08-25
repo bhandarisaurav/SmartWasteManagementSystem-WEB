@@ -109,9 +109,21 @@
         </div>
     </div>
 
-    <div class="col-md-12" style="height: 600px !important; max-width: 97%;padding-left: 28px;background-color: #ffffff">
+    <div class="col-md-12"
+         style="height: 600px !important; max-width: 97%;padding-left: 28px;background-color: #ffffff">
         <h6 class="m-0 font-weight-bold text-primary mt-4 mb-3">Dustbins Distribution</h6>
         <script type="text/javascript">
+
+            var list = [];
+
+            <g:each in="${dustBinsList}" var="dust">
+            var lis = [];
+            lis.push("${dust[0]}");
+            lis.push(${dust[1]});
+            lis.push(${dust[2]});
+            list.push(lis);
+            </g:each>
+
             function initialise() {
                 var myOptions = {
                     zoom: 8
@@ -120,18 +132,7 @@
 
                 var googleMap = new google.maps.Map(document.getElementById("gmaps"), myOptions);
                 var bounds = new google.maps.LatLngBounds();
-                var locations = [
-                    ['Gongabu', 27.7350475, 85.3145965],
-                    ['KTM Meat mart', 27.73535531, 85.31362651],
-                    ['BIST', 27.73570054, 85.31554294],
-                    ['Chhetri Niwas', 27.73570054, 85.31954294],
-                    ['SAURAV', 27.73592084, 85.31794294],
-                    ['BEST', 27.73572084, 85.31594294],
-                    ['Saras', 27.73573054, 85.31254294],
-                    ['RAMAN', 27.73570754, 85.31154294],
-                    ['Opera Tailoring', 27.73441832, 85.31353796]
-
-                ];
+                var locations = list;
                 for (var i = 0; i < locations.length; i++) {
                     var location = locations[i];
                     var position = new google.maps.LatLng(location[1], location[2]);

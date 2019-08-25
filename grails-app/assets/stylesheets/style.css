@@ -59,16 +59,19 @@ body{
 }
 
 .userbox{
+    font-size: 20px;
     margin-bottom: 20px;
 }
 
 .usertext{
+    font-size: 20px;
     float: left;
     font-family: lato;
     font-weight: bold;
 }
 
 .passwordtext{
+    font-size: 20px;
     float: left;
     font-family: lato;
     font-weight: bold;
@@ -223,7 +226,7 @@ select{
 }
 
 .mapleft{
-    height: 485px;
+    height: 500px;
     text-align: center;
     background-color: white;
     border-radius: 6px;
@@ -234,7 +237,7 @@ select{
 
 .mapright{
     float: right;
-    max-width: 1125px;
+    max-width: 1025px;
     text-align: center;
     background-color: white;
     border-radius: 6px;
@@ -246,7 +249,7 @@ select{
 }
 
 #map{
-    width: 1070px !important;
+    width: 970px !important;
     height: 680px !important;
 }
 

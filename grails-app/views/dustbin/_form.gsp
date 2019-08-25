@@ -1,3 +1,9 @@
+<style>
+    #latitude,#longitude,#address{
+        font-size: 17px;
+    }
+</style>
+
 <div class="userbox">
     <p class="usertext">
         Address
