@@ -121,7 +121,7 @@ class UserInfoController {
 
     @Secured("permitAll")
     float getData(float num) {
-        if (num == 27) {
+        if (num >= 27) {
             return 0
         }
         return 100 - num * 3.7037

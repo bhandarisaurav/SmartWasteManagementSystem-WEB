@@ -19,7 +19,7 @@
         margin-top: 1em;
         height: 650px;
         width: 1200px;
-        margin-right:15px;
+        margin-right: 15px;
     }
 
     html, body {
@@ -86,8 +86,6 @@
                     </form>
                 </div>
 
-
-
             </div>
         </div>
 
@@ -95,78 +93,78 @@
             <h2 class="headingdustbin">
                 Choose Dustbin Site
             </h2>
-            <div id="map"></div>
-            <script async defer
-                    src="https://maps.google.com/maps/api/js?sensor=false&key=AIzaSyDvrvpFW3a55md9eunoga95ZHN0ACXTKho
-&callback=initMap">
-            </script>
+
+                <div id="map"></div>
+                <script async defer
+                        src="https://maps.google.com/maps/api/js?callback=initMap">
+                </script>
+            </div>
+
         </div>
-
     </div>
-</div>
-<script>
+    <script>
 
-    var map;
-    var markers = [];
+        var map;
+        var markers = [];
 
-    function initMap() {
-        var haightAshbury = {lat: 27.7352136, lng: 85.3127951};
+        function initMap() {
+            var mapss = {lat: 27.7352136, lng: 85.3127951};
 
-        map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 16.3,                        // Set the zoom level manually
-            center: haightAshbury,
-            mapTypeId: 'roadmap'
-        });
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 16.3,
+                center: mapss,
+                mapTypeId: 'roadmap'
+            });
 
-        map.addListener('click', function (event) {
-            if (markers.length >= 1) {
-                deleteMarkers();
-            }
-
-            addMarker(event.latLng);
-            console.log(event);
-            document.getElementById('latitude').value = event.latLng.lat();
-            document.getElementById('longitude').value = event.latLng.lng();
-            var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + event.latLng.lat() + "," + event.latLng.lng() + "&key=AIzaSyDvrvpFW3a55md9eunoga95ZHN0ACXTKho&sensor=true"
-            $.ajax({
-                type: "GET",
-                url: url,
-                success: function (resp) {
-                    console.log(resp);
-                    var data = "";
-                    var x = resp.results[0].formatted_address.split(",")[0] === "Unnamed Road" ? resp.results[1].formatted_address.split(",")[0] : resp.results[0].formatted_address.split(",")[0];
-                    var i = 0;
-                    while (resp.results[i].formatted_address.split(",")[0] === "Unnamed Road") {
-                        i++;
-                    }
-                    document.getElementById('address').value = resp.results[i].formatted_address.split(",")[0];
+            map.addListener('click', function (event) {
+                if (markers.length >= 1) {
+                    deleteMarkers();
                 }
-            })
-        });
-    }
 
-    function addMarker(location) {
-        var marker = new google.maps.Marker({
-            position: location,
-            map: map
-        });
-        markers.push(marker);
-    }
-
-    function setMapOnAll(map) {
-        for (var i = 0; i < markers.length; i++) {
-            markers[i].setMap(map);
+                addMarker(event.latLng);
+                console.log(event);
+                document.getElementById('latitude').value = event.latLng.lat();
+                document.getElementById('longitude').value = event.latLng.lng();
+                var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + event.latLng.lat() + "," + event.latLng.lng() + "&key=AIzaSyB6iT4xjjU7V9KV2a6aGrvU27OyUcvGz3A";
+                // $.ajax({
+                //     type: "GET",
+                //     url: url,
+                //     success: function (resp) {
+                //         console.log(resp);
+                //         var data = "";
+                //         var x = resp.results[0].formatted_address.split(",")[0] === "Unnamed Road" ? resp.results[1].formatted_address.split(",")[0] : resp.results[0].formatted_address.split(",")[0];
+                //         var i = 0;
+                //         while (resp.results[i].formatted_address.split(",")[0] === "Unnamed Road") {
+                //             i++;
+                //         }
+                //         document.getElementById('address').value = resp.results[i].formatted_address.split(",")[0];
+                //     }
+                // })
+            });
         }
-    }
 
-    function clearMarkers() {
-        setMapOnAll(null);
-    }
+        function addMarker(location) {
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map
+            });
+            markers.push(marker);
+        }
 
-    function deleteMarkers() {
-        clearMarkers();
-        markers = [];
-    }
+        function setMapOnAll(map) {
+            for (var i = 0; i < markers.length; i++) {
+                markers[i].setMap(map);
+            }
+        }
+
+        function clearMarkers() {
+            setMapOnAll(null);
+        }
+
+        function deleteMarkers() {
+            clearMarkers();
+            markers = [];
+        }
 </script>
 </body>
 </html>

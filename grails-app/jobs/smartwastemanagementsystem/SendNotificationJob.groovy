@@ -7,7 +7,7 @@ class SendNotificationJob {
 
     def execute() {
 
-        def dustbin = Dustbin.findAllByStatusGreaterThanAndMessageSent(80.0, false)
+        def dustbin = Dustbin.findAllByStatusGreaterThanAndMessageSent(60.0, false)
 
         try {
             dustbin.each { it ->
