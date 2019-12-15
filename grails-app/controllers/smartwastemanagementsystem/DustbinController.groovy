@@ -1,9 +1,8 @@
 package smartwastemanagementsystem
 
 import grails.converters.JSON
-import smartwastemanagementsystem.Dustbin
 import grails.plugin.springsecurity.annotation.Secured
-import grails.plugin.springsecurity.SpringSecurityUtils
+import smartwastemanagementsystem.Dustbin
 
 @Secured('permitAll')
 class DustbinController {

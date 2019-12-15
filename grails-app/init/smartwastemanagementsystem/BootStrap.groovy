@@ -1,5 +1,7 @@
 package smartwastemanagementsystem
-import api.smartwaste.marshaller.*
+
+
+import api.smartwaste.marshaller.UserInfoMarshaller
 
 class BootStrap {
 

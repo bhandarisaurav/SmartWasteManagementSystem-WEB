@@ -1,7 +1,6 @@
 package smartwastemanagementsystem
 
 import grails.plugin.springsecurity.SpringSecurityService
-import grails.plugin.springsecurity.SpringSecurityUtils
 import grails.plugin.springsecurity.annotation.Secured
 
 @Secured('permitAll')

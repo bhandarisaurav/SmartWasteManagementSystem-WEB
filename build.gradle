@@ -50,7 +50,7 @@ dependencies {
     profile "org.grails.profiles:web"
     runtime "org.glassfish.web:el-impl:2.1.2-b03"
 //    runtime "com.h2database:h2"
-    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.11'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.34'
     compile 'org.grails.plugins:spring-security-core:3.2.0.M1'
     compile 'org.grails.plugins:quartz:2.0.13'
     compile 'com.fazecast:jSerialComm:[2.0.0,3.0.0)'
@@ -64,6 +64,10 @@ dependencies {
     testRuntime "org.seleniumhq.selenium:selenium-chrome-driver:2.47.1"
     testRuntime "org.seleniumhq.selenium:selenium-htmlunit-driver:2.47.1"
     testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
+    compile 'org.grails.plugins:joda-time:2.1.0'
+    compile group: 'org.imgscalr', name: 'imgscalr-lib', version: '4.2'
+    compile 'commons-io:commons-io:2.6'
+
 }
 
 bootRun {
